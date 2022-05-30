@@ -1,0 +1,27 @@
+version: "3.9"  # optional since v1.27.0
+services:
+  valheim:
+    container_name:    valheim
+    build:             ./steam
+    restart:           unless-stopped
+    tty: true
+    environment:
+      STEAMAPPID: 896660
+      STEAMAPP: "Valheim dedicated server"
+      SERVER_PW: "jakethesnake" 
+      SERVER_NAME: "Two Wars" 
+      SERVER_WORLD: "Bird Law"
+      SERVER_PUBLIC: "1"
+      STEAMCMD_UPDATE_ARGS: "" 
+      ADDITIONAL_ARGS: ""
+    ports:
+      - 2456:2456
+      - 2457:2457
+      - 2458:2458
+    volumes:
+      - ./steam/etc/:/home/steam/etc
+      - steam_data:/home/steam
+    command: ['bash', './etc/entry.sh']
+
+volumes:
+  steam_data:
