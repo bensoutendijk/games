@@ -15,7 +15,21 @@ services:
       STEAMCMD_UPDATE_ARGS: "" 
       ADDITIONAL_ARGS: ""
     ports:
-      - 2456:2458/udp
+      - target: 2456
+        host_ip: 127.0.0.1
+        published: 2456
+        protocol: udp
+        mode: host
+      - target: 2457
+        host_ip: 127.0.0.1
+        published: 2457
+        protocol: udp
+        mode: host
+      - target: 2458
+        host_ip: 127.0.0.1
+        published: 2458
+        protocol: udp
+        mode: host
     volumes:
       - ./steam/etc/:/home/steam/etc
     command: ['bash', './etc/entry.sh']
