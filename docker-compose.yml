@@ -15,27 +15,17 @@ services:
       STEAMCMD_UPDATE_ARGS: "" 
       ADDITIONAL_ARGS: ""
     ports:
-      - target: 2456
-        published: 2456
-        protocol: udp
-        mode: host
-      - target: 2457
-        published: 2457
-        protocol: udp
-        mode: host
-      - target: 2458
-        published: 2458
-        protocol: udp
-        mode: host
+      - "2456-2457:2456-2457/udp"
+      - "9001:9001/tcp"
     volumes:
       - ./steam/etc/:/home/steam/etc
-      - valheim_data:/home/steam/.config/unity3d/IronGate/Valheim
+      - valheim_app:/home/steam/valheim
     command: ['bash', './etc/entry.sh']
     networks:
       - valheim_network
 
 volumes:
-  valheim_data:
+  valheim_app:
 
 networks:
   valheim_network:

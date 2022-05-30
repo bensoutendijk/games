@@ -3,12 +3,15 @@ FROM cm2network/steamcmd:root
 LABEL maintainer="walentinlamonos@gmail.com"
 COPY ./etc /home/steam/etc
 ENV STEAMAPPDIR "/home/steam/valheim"
-ENV DLURL https://raw.githubusercontent.com/CM2Walki/Mordhau
+ENV APPDATADIR "/home/steam/.config/unity3d/IronGate/Valheim"
 
 RUN mkdir ${STEAMAPPDIR}
+RUN ls -a "/home/steam/valheim"
 
-RUN chmod +x "${HOMEDIR}/etc/entry.sh"
-RUN chown -R "${USER}:${USER}" "${HOMEDIR}/etc/entry.sh" ${STEAMAPPDIR}
+RUN chmod +x    "${HOMEDIR}/etc/entry.sh"
+RUN chown -R    "${USER}:${USER}" \
+                "${HOMEDIR}/etc/entry.sh" \
+                ${STEAMAPPDIR}
 RUN set -x \
 	# Install, update & upgrade packages
 	&& apt-get update \
