@@ -1,10 +1,19 @@
 services:
-  valheim:
+  # valheim:
+  #   env_file:
+  #     - valheim.env
+  #   image: mbround18/valheim:latest
+  #   ports:
+  #     - "2456-2457:2456-2457/udp"
+  #   volumes:
+  #     - ./valheim/saves:/home/steam/.config/unity3d/IronGate/Valheim
+  #     - ./valheim/server:/home/steam/valheim
+  factorio:
     env_file:
-      - valheim.env
-    image: mbround18/valheim:latest
+      - factorio.env
+    image: factoriotools/factorio
     ports:
-      - "2456-2457:2456-2457/udp"
+     - "34197:34197/udp"
+     - "27015:27015/tcp"
     volumes:
-      - ./valheim/saves:/home/steam/.config/unity3d/IronGate/Valheim
-      - ./valheim/server:/home/steam/valheim
+     - ./factorio:/factorio
