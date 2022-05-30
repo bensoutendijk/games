@@ -15,9 +15,7 @@ services:
       STEAMCMD_UPDATE_ARGS: "" 
       ADDITIONAL_ARGS: ""
     ports:
-      - 2456:2456
-      - 2457:2457
-      - 2458:2458
+      - 2456:2458/udp
     volumes:
       - ./steam/etc/:/home/steam/etc
     command: ['bash', './etc/entry.sh']
