@@ -1,6 +1,6 @@
 {
-  "name": "Name of the game as it will appear in the game listing",
-  "description": "Description of the game that will appear in the listing",
+  "name": "BGood Factorio Hole",
+  "description": "Come on down",
   "tags": ["game", "tags"],
 
   "_comment_max_players": "Maximum number of players allowed, admins can join even a full server. 0 means unlimited.",
@@ -21,7 +21,7 @@
   "_comment_token": "Authentication token. May be used instead of 'password' above.",
   "token": "30863120aacc0f448a60bb5fd74fe1",
 
-  "game_password": "",
+  "game_password": "asiancreampie",
 
   "_comment_require_user_verification": "When set to true, the server will only allow clients that have a valid Factorio.com account",
   "require_user_verification": true,
