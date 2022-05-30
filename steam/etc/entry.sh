@@ -29,5 +29,4 @@ fi
 # Switch to workdir
 cd "${STEAMAPPDIR}"
 
-ls /home/steam/valheim
-${STEAMAPPDIR}/valheim_server.x86_64 -name "BGood Good Times | Valheim Poggers" -world "BirdLaw" -password "asiancreampie" -public 1
+${STEAMAPPDIR}/valheim_server.x86_64 -name "$SERVER_NAME" -world "$SERVER_WORLD" -password "$SERVER_PW" -public $SERVER_PUBLIC

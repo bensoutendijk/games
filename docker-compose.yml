@@ -20,8 +20,9 @@ services:
       - 2458:2458
     volumes:
       - ./steam/etc/:/home/steam/etc
-      - steam_data:/home/steam
     command: ['bash', './etc/entry.sh']
+    networks:
+      - valheim_network
 
-volumes:
-  steam_data:
+networks:
+  valheim_network:
