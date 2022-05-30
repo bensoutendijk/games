@@ -1,42 +1,41 @@
-   0.000 2022-05-30 19:00:03; Factorio 1.1.59 (build 59719, linux64, headless)
+   0.000 2022-05-30 19:18:37; Factorio 1.1.59 (build 59719, linux64, headless)
    0.000 Operating system: Linux
-   0.000 Program arguments: "/opt/factorio/bin/x64/factorio" "--port" "34198" "--server-settings" "/factorio/config/server-settings.json" "--server-banlist" "/factorio/config/server-banlist.json" "--rcon-port" "27015" "--server-whitelist" "/factorio/config/server-whitelist.json" "--use-server-whitelist" "--server-adminlist" "/factorio/config/server-adminlist.json" "--rcon-password" <private> "--server-id" "/factorio/config/server-id.json" "--start-server-load-latest" 
+   0.000 Program arguments: "/opt/factorio/bin/x64/factorio" "--port" "34197" "--server-settings" "/factorio/config/server-settings.json" "--server-banlist" "/factorio/config/server-banlist.json" "--rcon-port" "27015" "--server-whitelist" "/factorio/config/server-whitelist.json" "--use-server-whitelist" "--server-adminlist" "/factorio/config/server-adminlist.json" "--rcon-password" <private> "--server-id" "/factorio/config/server-id.json" "--start-server-load-latest" 
    0.000 Read data path: /opt/factorio/data
-   0.000 Write data path: /factorio [145223/233201MB]
+   0.000 Write data path: /factorio [879313/937869MB]
    0.000 Binaries path: /opt/factorio/bin
-   0.006 System info: [CPU: Intel(R) Core(TM) i5-9600K CPU @ 3.70GHz, 6 cores, RAM: 15958 MB]
-   0.006 Environment: DISPLAY=<unset> WAYLAND_DISPLAY=<unset> DESKTOP_SESSION=<unset> XDG_SESSION_DESKTOP=<unset> XDG_CURRENT_DESKTOP=<unset> __GL_FSAA_MODE=<unset> __GL_LOG_MAX_ANISO=<unset> __GL_SYNC_TO_VBLANK=<unset> __GL_SORT_FBCONFIGS=<unset> __GL_YIELD=<unset>
-   0.006 Running in headless mode
-   0.010 Loading mod core 0.0.0 (data.lua)
-   0.043 Loading mod base 1.1.59 (data.lua)
-   0.217 Loading mod base 1.1.59 (data-updates.lua)
-   0.283 Checksum for core: 1636702648
-   0.283 Checksum of base: 3206512929
-   0.431 Prototype list checksum: 3034860339
-   0.469 Info PlayerData.cpp:71: Local player-data.json available, timestamp 1653937200
-   0.469 Info PlayerData.cpp:78: Cloud player-data.json unavailable
-   0.470 Factorio initialised
-   0.471 Info ServerSynchronizer.cpp:29: nextHeartbeatSequenceNumber(0) initialized Synchronizer nextTickClosureTick(0).
-   0.471 Info ServerMultiplayerManager.cpp:794: updateTick(4294967295) changing state from(Ready) to(PreparedToHostGame)
-   0.471 Info ServerMultiplayerManager.cpp:794: updateTick(4294967295) changing state from(PreparedToHostGame) to(CreatingGame)
-   0.471 Loading map /factorio/saves/_autosave1.zip: 719523 bytes.
-   0.480 Loading level.dat: 1201038 bytes.
-   0.485 Info Scenario.cpp:199: Map version 1.1.59-0
-   0.500 Loading script.dat: 1171 bytes.
-   0.503 Checksum for script /factorio/temp/currently-playing/control.lua: 3795083680
-   0.504 Info UDPSocket.cpp:27: Opening socket at (IP ADDR:({0.0.0.0:34198}))
-   0.504 Hosting game at IP ADDR:({0.0.0.0:34198})
-   0.504 Info HttpSharedState.cpp:54: Downloading https://auth.factorio.com/generate-server-padlock-2?api_version=4
-   0.739 Info AuthServerConnector.cpp:77: Obtained serverPadlock for serverHash (UL97Te6cfI2IbpeJFf0msZDJEPyICpJ8) from the auth server.
-   0.739 Info ServerMultiplayerManager.cpp:794: updateTick(0) changing state from(CreatingGame) to(InGame)
-   0.851 Info ServerRouter.cpp:657: Asking pingpong servers (pingpong1.factorio.com:34197, pingpong2.factorio.com:34197, pingpong3.factorio.com:34197, pingpong4.factorio.com:34197) for own address
-   0.851 Info UDPSocket.cpp:39: Opening socket for broadcast
-   0.852 Error InterruptibleStdioStream.cpp:61: Got EOF on stdin; closing
-   0.852 Info RemoteCommandProcessor.cpp:130: Starting RCON interface at IP ADDR:({0.0.0.0:27015})
-   0.852 Info CommandLineMultiplayer.cpp:292: Maximum segment size = 100; minimum segment size = 25; maximum-segment-size peer count = 10; minimum-segment-size peer count = 20
-   0.903 Info ServerRouter.cpp:540: Own address is IP ADDR:({136.62.43.176:34198}) (confirmed by pingpong1)
-   0.986 Info ServerRouter.cpp:540: Own address is IP ADDR:({136.62.43.176:34198}) (confirmed by pingpong2)
-   1.019 Info ServerRouter.cpp:540: Own address is IP ADDR:({136.62.43.176:34198}) (confirmed by pingpong4)
-  91.052 Error ServerMultiplayerManager.cpp:731: Matching server connection failed: Error when creating server game: Download failed (status code 401): auth error: Missing username.
- 223.058 Error HttpSharedState.cpp:138: CURL failed: code:7, 7; Failed to connect to multiplayer.factorio.com port 443: Network is unreachable
- 240.906 Error HttpSharedState.cpp:138: CURL failed: code:6, 6; Could not resolve host: multiplayer.factorio.com
+   0.022 System info: [CPU: Intel(R) Core(TM) i7 CPU         950  @ 3.07GHz, 8 cores, RAM: 7946 MB]
+   0.022 Environment: DISPLAY=<unset> WAYLAND_DISPLAY=<unset> DESKTOP_SESSION=<unset> XDG_SESSION_DESKTOP=<unset> XDG_CURRENT_DESKTOP=<unset> __GL_FSAA_MODE=<unset> __GL_LOG_MAX_ANISO=<unset> __GL_SYNC_TO_VBLANK=<unset> __GL_SORT_FBCONFIGS=<unset> __GL_YIELD=<unset>
+   0.022 Running in headless mode
+   0.034 Loading mod core 0.0.0 (data.lua)
+   0.161 Loading mod base 1.1.59 (data.lua)
+   0.830 Loading mod base 1.1.59 (data-updates.lua)
+   1.069 Checksum for core: 1636702648
+   1.069 Checksum of base: 3206512929
+   1.553 Prototype list checksum: 3034860339
+   1.639 Info PlayerData.cpp:71: Local player-data.json available, timestamp 1653938316
+   1.639 Info PlayerData.cpp:78: Cloud player-data.json unavailable
+   1.641 Factorio initialised
+   1.642 Info ServerSynchronizer.cpp:29: nextHeartbeatSequenceNumber(0) initialized Synchronizer nextTickClosureTick(0).
+   1.642 Info ServerMultiplayerManager.cpp:794: updateTick(4294967295) changing state from(Ready) to(PreparedToHostGame)
+   1.642 Info ServerMultiplayerManager.cpp:794: updateTick(4294967295) changing state from(PreparedToHostGame) to(CreatingGame)
+   1.643 Loading map /factorio/saves/_autosave1.zip: 719523 bytes.
+   1.671 Loading level.dat: 1201038 bytes.
+   1.683 Info Scenario.cpp:199: Map version 1.1.59-0
+   1.732 Loading script.dat: 1171 bytes.
+   1.739 Checksum for script /factorio/temp/currently-playing/control.lua: 3795083680
+   1.741 Info UDPSocket.cpp:27: Opening socket at (IP ADDR:({0.0.0.0:34197}))
+   1.741 Hosting game at IP ADDR:({0.0.0.0:34197})
+   1.742 Info HttpSharedState.cpp:54: Downloading https://auth.factorio.com/generate-server-padlock-2?api_version=4
+   1.995 Info AuthServerConnector.cpp:77: Obtained serverPadlock for serverHash (BchELoVngwtQDuYjg9w967DKC3M96Ax3) from the auth server.
+   1.996 Info ServerMultiplayerManager.cpp:794: updateTick(0) changing state from(CreatingGame) to(InGame)
+   2.105 Info ServerRouter.cpp:657: Asking pingpong servers (pingpong1.factorio.com:34197, pingpong2.factorio.com:34197, pingpong3.factorio.com:34197, pingpong4.factorio.com:34197) for own address
+   2.105 Info UDPSocket.cpp:39: Opening socket for broadcast
+   2.105 Error InterruptibleStdioStream.cpp:61: Got EOF on stdin; closing
+   2.106 Info RemoteCommandProcessor.cpp:130: Starting RCON interface at IP ADDR:({0.0.0.0:27015})
+   2.106 Info CommandLineMultiplayer.cpp:292: Maximum segment size = 100; minimum segment size = 25; maximum-segment-size peer count = 10; minimum-segment-size peer count = 20
+   2.157 Info ServerRouter.cpp:540: Own address is IP ADDR:({136.62.43.176:34197}) (confirmed by pingpong1)
+   2.240 Info ServerRouter.cpp:540: Own address is IP ADDR:({136.62.43.176:34197}) (confirmed by pingpong2)
+   2.257 Info ServerRouter.cpp:540: Own address is IP ADDR:({136.62.43.176:34197}) (confirmed by pingpong4)
+   2.313 Info MatchingServer.cpp:114: Matching server game `12694054` has been created.
+   2.323 Info ServerMultiplayerManager.cpp:726: Matching server connection resumed
