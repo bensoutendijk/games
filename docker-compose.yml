@@ -1,31 +1,10 @@
-version: "3.9"  # optional since v1.27.0
 services:
   valheim:
-    container_name:    valheim
-    build:             ./steam
-    restart:           unless-stopped
-    tty: true
-    environment:
-      STEAMAPPID: 896660
-      STEAMAPP: "Valheim dedicated server"
-      SERVER_PW: "jakethesnake" 
-      SERVER_NAME: "Two Wars" 
-      SERVER_WORLD: "Bird Law"
-      SERVER_PUBLIC: "1"
-      STEAMCMD_UPDATE_ARGS: "" 
-      ADDITIONAL_ARGS: ""
+    env_file:
+      - valheim.env
+    image: mbround18/valheim:latest
     ports:
       - "2456-2457:2456-2457/udp"
-      - "9001:9001/tcp"
     volumes:
-      - ./steam/etc/:/home/steam/etc
-      - valheim_app:/home/steam/valheim
-    command: ['bash', './etc/entry.sh']
-    networks:
-      - valheim_network
-
-volumes:
-  valheim_app:
-
-networks:
-  valheim_network:
+      - ./valheim/saves:/home/steam/.config/unity3d/IronGate/Valheim
+      - ./valheim/server:/home/steam/valheim
