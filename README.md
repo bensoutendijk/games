@@ -19,3 +19,11 @@ USERNAME=<FACTORIO.COM USERNAME>
 TOKEN=<FACTORIO.COM TOKEN>
 PORT=34197
 ```
+
+## ./.aws/credentials
+```
+[default]
+aws_access_key_id=AKIAIOSFODNN7EXAMPLE
+aws_secret_access_key=wJalrXUtnFEMI/K7MDENG/bPxRfiCYEXAMPLEKEY
+```
+

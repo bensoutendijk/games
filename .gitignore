@@ -3,3 +3,5 @@ valheim
 satisfactory
 minecraft
 *.env
+.aws/credentials
+backups
