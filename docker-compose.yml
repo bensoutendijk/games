@@ -1,17 +1,18 @@
 services:
   valheim:
-    env_file:
-      - valheim.env
+    build: 
+      dockerfile: ./docker/valheim.dockerfile
+      context: .
     restart: unless-stopped
-    image: mbround18/valheim:latest
     ports:
       - "2456-2457:2456-2457/udp"
     volumes:
+      - ./.aws:/root/.aws
+      - ./config/valheim:/config
+      - ./scripts/startValheim.sh:/startWithImport.sh
       - ./data/valheim/saves:/home/steam/.config/unity3d/IronGate/Valheim
       - ./data/valheim/server:/home/steam/valheim
   factorio:
-    env_file:
-      - factorio.env
     restart: unless-stopped
     image: factoriotools/factorio
     ports:
@@ -20,8 +21,6 @@ services:
     volumes:
       - ./data/factorio:/factorio
   satisfactory:
-    env_file:
-      - satisfactory.env
     restart: unless-stopped
     image: wolveix/satisfactory-server:latest
     ports:
@@ -34,8 +33,8 @@ services:
     build: 
       dockerfile: ./docker/minecraft.dockerfile
       context: .
-    env_file:
-      - minecraft.env
+    environment:
+      - EULA=true
     tty: true
     stdin_open: true
     restart: unless-stopped
