@@ -55,4 +55,4 @@ services:
       - ./.aws:/root/.aws
       - ./config:/config
       - ./data:/data
-    command: ['bash', '/home/backup.sh']
+      - ./scripts/backup.sh:/backup.sh

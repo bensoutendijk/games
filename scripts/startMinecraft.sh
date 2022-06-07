@@ -14,9 +14,9 @@ else
         mkdir -p /tmp
         aws s3 cp s3://bgoodmon/games/minecraft/${FILENAME} /tmp/${FILENAME}
 
-        echo "Extracting data..."
+        echo "Extracting data from ${FILENAME}..."
         mkdir -p /data/${WORLD}
-        tar -xvf /tmp/${FILENAME} -C /data/${WORLD}
+        tar -xvf /tmp/${FILENAME} -C /data
 
         chown 1000:1000 /data/${WORLD}
 
