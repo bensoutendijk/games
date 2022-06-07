@@ -10,7 +10,7 @@ WORLD=$(grep level-name /config/minecraft/server.properties | cut -d '=' -f 2-)
 echo "Found level: ${WORLD}"
 echo "Compressing files..."
 # Compress folder
-tar -czvf /backups/${TIMESTAMP}_${WORLD}.tar.gz -C / /data/minecraft/${WORLD}
+tar -czvf /backups/${TIMESTAMP}_${WORLD}.tar.gz -C /data/minecraft /data/minecraft/${WORLD}
 
 echo "Uploading to AWS"
 # Backup game server files using AWS
