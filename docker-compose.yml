@@ -52,6 +52,4 @@ services:
       - ./.aws:/root/.aws
       - ./config:/config
       - ./data:/data
-    tty: true
-    restart: unless-stopped
     command: ['bash', '/home/backup.sh']
