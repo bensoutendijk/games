@@ -1,7 +1,5 @@
-factorio
-valheim
-satisfactory
-minecraft
-*.env
 .aws/credentials
+*.env
+
+data
 backups
