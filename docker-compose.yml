@@ -7,8 +7,8 @@ services:
     ports:
       - "2456-2457:2456-2457/udp"
     volumes:
-      - ./valheim/saves:/home/steam/.config/unity3d/IronGate/Valheim
-      - ./valheim/server:/home/steam/valheim
+      - ./data/valheim/saves:/home/steam/.config/unity3d/IronGate/Valheim
+      - ./data/valheim/server:/home/steam/valheim
   factorio:
     env_file:
       - factorio.env
@@ -18,7 +18,7 @@ services:
       - "34197:34197/udp"
       - "27015:27015/tcp"
     volumes:
-      - ./factorio:/factorio
+      - ./data/factorio:/factorio
   satisfactory:
     env_file:
       - satisfactory.env
@@ -29,9 +29,11 @@ services:
       - 15000:15000/udp
       - 15777:15777/udp
     volumes:
-      - ./satisfactory:/config
+      - ./data/satisfactory:/config
   minecraft:
-    build: ./docker/minecraft
+    build: 
+      dockerfile: ./docker/minecraft.dockerfile
+      context: .
     env_file:
       - minecraft.env
     tty: true
@@ -41,4 +43,15 @@ services:
       - 25565:25565
       - 25575:25575
     volumes:
-      - ./minecraft:/data
+      - ./data/minecraft:/data
+  auto-backup:
+    build: 
+      dockerfile: ./docker/auto-backup.dockerfile
+      context: .
+    volumes:
+      - ./.aws:/root/.aws
+      - ./config:/config
+      - ./data:/data
+    tty: true
+    restart: unless-stopped
+    command: ['bash', '/home/backup.sh']
