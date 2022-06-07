@@ -43,6 +43,9 @@ services:
       - 25565:25565
       - 25575:25575
     volumes:
+      - ./.aws:/root/.aws
+      - ./config/minecraft:/config
+      - ./scripts/startMinecraft.sh:/startWithImport.sh
       - ./data/minecraft:/data
   auto-backup:
     build: 
