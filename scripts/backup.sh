@@ -14,5 +14,5 @@ tar -czvf /backups/${TIMESTAMP}_${WORLD}.tar.gz /data/minecraft/${WORLD}
 
 echo "Uploading to AWS"
 # Backup game server files using AWS
-aws s3 cp /backups/* s3://bgoodmon/games/
+aws s3 cp /backups/* s3://bgoodmon/games/minecraft
 
