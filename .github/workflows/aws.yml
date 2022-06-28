@@ -75,7 +75,7 @@ jobs:
         # push it to ECR so that it can
         # be deployed to ECS.
         aws ecr get-login-password --region us-west-2 | docker login --username AWS --password-stdin $ECR_REGISTRY
-        docker build -f ./docker/frontend.dockerfile --target prod -t $CONTAINER_NAME .
+        docker build -f ./docker/frontend.dockerfile --target prod -t $CONTAINER_NAME:$IMAGE_TAG .
         docker tag $CONTAINER_NAME:$IMAGE_TAG $ECR_REGISTRY/$CONTAINER_NAME:$IMAGE_TAG
         docker push $ECR_REGISTRY/$CONTAINER_NAME:$IMAGE_TAG
         echo "::set-output name=image::$ECR_REGISTRY/$CONTAINER_NAME:$IMAGE_TAG"
