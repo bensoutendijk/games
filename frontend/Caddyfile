@@ -1,0 +1,10 @@
+:3000 {
+  root * /usr/share/caddy
+  try_files {path} /index.html
+  header /img/* Cache-Control max-age=31536000
+  header /js/* Cache-Control max-age=31536000
+  header /css/* Cache-Control max-age=31536000
+  header /fonts/* Cache-Control max-age=31536000
+  encode gzip
+  file_server
+}
