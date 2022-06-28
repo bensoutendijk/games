@@ -3,7 +3,7 @@ services:
     build:
       dockerfile: ./docker/frontend.dockerfile
       context: .
-      target: ${FRONTEND_ENV}
+      target: dev
     volumes:
       - ./frontend:/app
       - ./frontend/Caddyfile:/etc/caddy/Caddyfile
