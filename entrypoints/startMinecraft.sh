@@ -7,7 +7,7 @@ if [ ! -z "$FILENAME" ]
 
         echo "Extracting data from ${FILENAME}..."
         mkdir -p /config
-        tar -xvf /tmp/${FILENAME} -C /config
+        tar -xf /tmp/${FILENAME} -C /data
 
         chown 1000:1000 /config
 
@@ -35,7 +35,7 @@ else
 
         echo "Extracting data from ${FILENAME}..."
         mkdir -p /data/${WORLD}
-        tar -xvf /tmp/${FILENAME} -C /data
+        tar -xf /tmp/${FILENAME} -C /data
 
         chown 1000:1000 /data/${WORLD}
 
