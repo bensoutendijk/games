@@ -5,7 +5,7 @@ services:
       context: .
       target: dev
     volumes:
-      - ./frontend:/app
+      - ./frontend/src:/app/src
       - ./frontend/Caddyfile:/etc/caddy/Caddyfile
     ports:
       - 3000:3000

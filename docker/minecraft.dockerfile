@@ -1,4 +1,4 @@
-FROM itzg/minecraft-server
+FROM itzg/minecraft-server:java17-jdk
 
 RUN apt-get update \
   && apt-get install -y curl unzip
