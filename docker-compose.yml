@@ -66,5 +66,5 @@ services:
       - ./.aws:/root/.aws
       - ./config:/config
       - ./data:/data
-      - ./ops/backup.sh:/backup.sh
+      - ./entrypoints/startBackup.sh:/backup.sh
       - ./backups:/backups
