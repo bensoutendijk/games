@@ -46,7 +46,7 @@ services:
       context: .
     environment:
       - EULA=true
-      - MEMORY=5G
+      - MEMORY=4G
     tty: true
     stdin_open: true
     restart: unless-stopped
