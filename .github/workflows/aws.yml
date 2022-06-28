@@ -74,9 +74,11 @@ jobs:
         # Build a docker container and
         # push it to ECR so that it can
         # be deployed to ECS.
-        docker build -f ./docker/frontend.dockerfile --target prod -t $ECR_REGISTRY/$ECR_REPOSITORY:$IMAGE_TAG .
-        docker push $ECR_REGISTRY/$ECR_REPOSITORY:$IMAGE_TAG
-        echo "::set-output name=image::$ECR_REGISTRY/$ECR_REPOSITORY:$IMAGE_TAG"
+        aws ecr get-login-password --region us-west-2 | docker login --username AWS --password-stdin $ECR_REGISTRY
+        docker build -f ./docker/frontend.dockerfile --target prod -t $CONTAINER_NAME .
+        docker tag bgoodmon:latest $ECR_REGISTRY/$CONTAINER_NAME:$IMAGE_TAG
+        docker push $ECR_REGISTRY/$CONTAINER_NAME:$IMAGE_TAG
+        echo "::set-output name=image::$ECR_REGISTRY/$CONTAINER_NAME:$IMAGE_TAG"
 
     - name: Fill in the new image ID in the Amazon ECS task definition
       id: task-def
