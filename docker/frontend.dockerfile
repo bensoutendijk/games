@@ -1,5 +1,4 @@
 FROM node:18-alpine3.15 as dev
-
 WORKDIR /app
 
 COPY ./frontend .
@@ -9,7 +8,6 @@ RUN npm ci
 CMD npm run dev
 
 FROM node:18-alpine3.15 AS build
-
 WORKDIR /app
 
 COPY ./frontend .

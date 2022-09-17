@@ -1,4 +1,4 @@
-FROM itzg/minecraft-server
+FROM itzg/minecraft-server:java17-jdk
 
 RUN apt-get update \
   && apt-get install -y curl unzip
@@ -8,5 +8,6 @@ RUN curl https://awscli.amazonaws.com/awscli-exe-linux-x86_64.zip -o awscliv2.zi
   && ./aws/install \
   && rm -rf aws awscliv2.zip
 
+COPY ./entrypoints/startMinecraft.sh /startWithImport.sh
 
 ENTRYPOINT [ "bash", "/startWithImport.sh" ]

@@ -3,9 +3,9 @@ services:
     build:
       dockerfile: ./docker/frontend.dockerfile
       context: .
-      target: ${FRONTEND_ENV}
+      target: dev
     volumes:
-      - ./frontend:/app
+      - ./frontend/src:/app/src
       - ./frontend/Caddyfile:/etc/caddy/Caddyfile
     ports:
       - 3000:3000
@@ -46,7 +46,7 @@ services:
       context: .
     environment:
       - EULA=true
-      - MEMORY=5G
+      - MEMORY=4G
     tty: true
     stdin_open: true
     restart: unless-stopped
@@ -66,5 +66,5 @@ services:
       - ./.aws:/root/.aws
       - ./config:/config
       - ./data:/data
-      - ./ops/backup.sh:/backup.sh
+      - ./entrypoints/startBackup.sh:/backup.sh
       - ./backups:/backups
