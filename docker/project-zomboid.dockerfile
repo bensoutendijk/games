@@ -2,27 +2,12 @@ FROM cm2network/steamcmd:root
 
 ENV STEAMAPPID 380870
 ENV STEAMAPP project-zomboid
-ENV STEAMAPPDIR "/server"
+ENV STEAMAPPDIR "/home/steam/app"
 
-COPY $STEAMAPP/entry.sh '/entry.sh'
-
-RUN set -x \
-    && apt-get update \
-    && mkdir -p "${STEAMAPPDIR}" \
-	# Add entry script
-	&& { \
-		echo '@ShutdownOnFailedCommand 1'; \
-		echo '@NoPromptForPassword 1'; \
-		echo 'force_install_dir '"${STEAMAPPDIR}"''; \
-		echo 'login anonymous'; \
-		echo 'app_update '"${STEAMAPPID}"''; \
-		echo 'quit'; \
-	   } > "${HOMEDIR}/${STEAMAPP}_update.txt" \
-	&& chmod +x "/entry.sh" \
-	&& chown -R "${USER}:${USER}" "/entry.sh" "${STEAMAPPDIR}" "${HOMEDIR}/${STEAMAPP}_update.txt" \
-	# Clean up
-	&& rm -rf /var/lib/apt/lists/*
-
+RUN mkdir -p ${STEAMAPPDIR}
+RUN mkdir -p "/home/steam/Zomboid"
+RUN chown -R "${USER}:${USER}" "${STEAMAPPDIR}"
+RUN chown -R "${USER}:${USER}" "/home/steam/Zomboid"
 
 # Switch to user
 USER ${USER}

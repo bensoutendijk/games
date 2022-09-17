@@ -7,11 +7,17 @@ services:
     stdin_open: true
     restart: unless-stopped
     ports:
-      - 25565:25565
-      - 25575:25575
+      - 8766:8766/udp
+      - 16261:16261/udp
+      - 16262-16272:16262-16272/tcp
     volumes:
-      - ./project-zomboid/server:/server
-  
+      - ./project-zomboid/entry.sh:/home/steam/entry.sh:ro
+      - zomboid_app:/home/steam/app:rw
+      - zomboid_data:/home/steam/Zomboid:rw
+volumes:
+  zomboid_data:
+  zomboid_app:
+
   # valheim:
   #   build: 
   #     dockerfile: ./docker/valheim.dockerfile
