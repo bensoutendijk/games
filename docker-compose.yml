@@ -1,52 +1,8 @@
 services:
-  frontend: 
+  project-zomboid:
     build:
-      dockerfile: ./docker/frontend.dockerfile
+      dockerfile: ./docker/project-zomboid.dockerfile
       context: .
-      target: dev
-    volumes:
-      - ./frontend/src:/app/src
-      - ./frontend/Caddyfile:/etc/caddy/Caddyfile
-    ports:
-      - 3000:3000
-  valheim:
-    build: 
-      dockerfile: ./docker/valheim.dockerfile
-      context: .
-    restart: unless-stopped
-    ports:
-      - 2456-2457:2456-2457/udp
-    volumes:
-      - ./.aws:/root/.aws
-      - ./config/valheim:/config
-      - ./entrypoints/startValheim.sh:/startWithImport.sh
-      - ./data/valheim/saves:/home/steam/.config/unity3d/IronGate/Valheim
-      - ./data/valheim/server:/home/steam/valheim
-  factorio:
-    restart: unless-stopped
-    image: factoriotools/factorio
-    ports:
-      - 34197:34197/udp
-      - 27015:27015/tcp
-    volumes:
-      - ./data/factorio:/factorio
-      - ./config/factorio:/factorio/config
-  satisfactory:
-    restart: unless-stopped
-    image: wolveix/satisfactory-server:latest
-    ports:
-      - 7777:7777/udp
-      - 15000:15000/udp
-      - 15777:15777/udp
-    volumes:
-      - ./data/satisfactory:/config
-  minecraft:
-    build: 
-      dockerfile: ./docker/minecraft.dockerfile
-      context: .
-    environment:
-      - EULA=true
-      - MEMORY=4G
     tty: true
     stdin_open: true
     restart: unless-stopped
@@ -54,17 +10,75 @@ services:
       - 25565:25565
       - 25575:25575
     volumes:
-      - ./.aws:/root/.aws
-      - ./config/minecraft:/config
-      - ./entrypoints/startMinecraft.sh:/startWithImport.sh
-      - ./data/minecraft:/data
-  auto-backup:
-    build: 
-      dockerfile: ./docker/auto-backup.dockerfile
-      context: .
-    volumes:
-      - ./.aws:/root/.aws
-      - ./config:/config
-      - ./data:/data
-      - ./entrypoints/startBackup.sh:/backup.sh
-      - ./backups:/backups
+      - ./project-zomboid/server:/server
+  
+  # valheim:
+  #   build: 
+  #     dockerfile: ./docker/valheim.dockerfile
+  #     context: .
+  #   restart: unless-stopped
+  #   ports:
+  #     - 2456-2457:2456-2457/udp
+  #   volumes:
+  #     - ./.aws:/root/.aws
+  #     - ./config/valheim:/config
+  #     - ./entrypoints/startValheim.sh:/startWithImport.sh
+  #     - ./data/valheim/saves:/home/steam/.config/unity3d/IronGate/Valheim
+  #     - ./data/valheim/server:/home/steam/valheim
+  # factorio:
+  #   restart: unless-stopped
+  #   image: factoriotools/factorio
+  #   ports:
+  #     - 34197:34197/udp
+  #     - 27015:27015/tcp
+  #   volumes:
+  #     - ./data/factorio:/factorio
+  #     - ./config/factorio:/factorio/config
+  # satisfactory:
+  #   restart: unless-stopped
+  #   image: wolveix/satisfactory-server:latest
+  #   ports:
+  #     - 7777:7777/udp
+  #     - 15000:15000/udp
+  #     - 15777:15777/udp
+  #   volumes:
+  #     - ./data/satisfactory:/config
+  # minecraft:
+  #   build: 
+  #     dockerfile: ./docker/minecraft.dockerfile
+  #     context: .
+  #   environment:
+  #     - EULA=true
+  #     - MEMORY=4G
+  #   tty: true
+  #   stdin_open: true
+  #   restart: unless-stopped
+  #   ports:
+  #     - 25565:25565
+  #     - 25575:25575
+  #   volumes:
+  #     - ./.aws:/root/.aws
+  #     - ./config/minecraft:/config
+  #     - ./entrypoints/startMinecraft.sh:/startWithImport.sh
+  #     - ./data/minecraft:/data
+
+  # frontend: 
+  #   build:
+  #     dockerfile: ./docker/frontend.dockerfile
+  #     context: .
+  #     target: dev
+  #   volumes:
+  #     - ./frontend/src:/app/src
+  #     - ./frontend/Caddyfile:/etc/caddy/Caddyfile
+  #   ports:
+  #     - 3000:3000
+  # auto-backup:
+  #   build: 
+  #     dockerfile: ./docker/auto-backup.dockerfile
+  #     context: .
+  #   volumes:
+  #     - ./.aws:/root/.aws
+  #     - ./config:/config
+  #     - ./data:/data
+  #     - ./entrypoints/startBackup.sh:/backup.sh
+  #     - ./backups:/backups
